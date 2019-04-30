@@ -19,7 +19,7 @@ int check_cycle(listint_t *list)
 		return (0);
 	}
 	iter2 = iter2->next;
-	while (iter1 != NULL && iter2->next != NULL)
+	while (iter1 != NULL && iter2->next != NULL && iter2 != NULL)
 	{
 		if (iter1 == iter2)
 		{
