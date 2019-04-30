@@ -5,5 +5,5 @@ for i in range(0, 100):
         print("{}{}".format(0, i), end=charend)
     else:
         if i == 99:
-            charend = ""
+            charend = "\n"
         print(i, end=charend)
