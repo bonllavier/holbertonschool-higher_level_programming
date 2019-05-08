@@ -5,26 +5,28 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(tuple_a) == 0:
         val1 = 0 + tuple_b[0]
         val2 = 0 + tuple_b[1]
-    elif len(tuple_b) == 0:
+    if len(tuple_b) == 0:
         val1 = tuple_a[0] + 0
         val2 = tuple_a[1] + 0
-    elif len(tuple_a) < 2:
+    if len(tuple_a) < 2 and len(tuple_a) > 0:
         list_tmp1 = list(tuple_a)
         if len(list_tmp1) == 1:
             list_tmp1.append(0)
         tuplex_final1 = tuple(list_tmp1)
         val1 = tuplex_final1[0] + tuple_b[0]
         val2 = tuplex_final1[1] + tuple_b[1]
-    elif len(tuple_b) < 2:
+    if len(tuple_b) < 2 and len(tuple_b) > 0:
         list_tmp2 = list(tuple_b)
         if len(list_tmp2) == 1:
             list_tmp2.append(0)
         tuplex_final2 = tuple(list_tmp2)
         val1 = tuple_a[0] + tuplex_final2[0]
         val2 = tuple_a[1] + tuplex_final2[1]
-    else:
+    if len(tuple_a) > 1 and len(tuple_b) > 1:
         val1 = tuple_a[0] + tuple_b[0]
         val2 = tuple_a[1] + tuple_b[1]
 
-    new_tuplex = (val1, val2)
+    val_1 = val1
+    val_2 = val2
+    new_tuplex = (val_1, val_2)
     return(new_tuplex)
