@@ -11,12 +11,3 @@ def magic_calculation(a, b):
             result = b * a
             break
     return result
-                    
-        
-            
-    
-
-
-
-import dis
-dis.dis(magic_calculation)
