@@ -13,6 +13,6 @@ class Square:
         try:
             if (int(size) < 0):
                 raise ValueError
+            self.__size = size
         except ValueError:
             raise ValueError("size must be >= 0")
-        self.__size = size
