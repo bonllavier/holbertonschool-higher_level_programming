@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 class Square:
+    """class square.
+    Attributes:
+        __size: size of square.
+    """
     def __init__(self, size=0):
+        """Initialization, only allowed type int > 0."""
         try:
             size += 0
         except TypeError:
