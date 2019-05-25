@@ -1,0 +1,51 @@
+#!/usr/bin/python3
+"""Unittest for max_integer([..])
+"""
+import unittest
+max_integer = __import__('6-max_integer').max_integer
+
+
+class TestMaxInteger(unittest.TestCase):
+    def test_max_int(self):
+        """
+        simple cases
+        """
+        result = max_integer([1, 2, 3, 4])
+        self.assertEqual(result, 4)
+
+    def test2(self):
+        """
+        simple cases2
+        """
+        result = max_integer([])
+        self.assertEqual(result, None)
+
+    def test_None(self):
+        """ test for 1 item
+        """
+        with self.assertRaises(TypeError):
+            max_integer(None)
+
+    def test2(self):
+        """
+        negative
+        """
+        with self.assertRaises(TypeError):
+            max_integer(-1)
+
+    def conv_integer(self):
+        """
+        conversion cases
+        """
+        list = ["husjklsd", "sdjhklduhjiklsf;d"]
+        self.assertEqual(max_integer(list), 365)
+
+    def test_false_integer(self):
+        """ test for 1 item
+        false test
+        """
+        list = [1, 2, 3, 4]
+        self.assertFalse(max_integer(list) == 2)
+
+if __name__ == '__main__':
+    unittest.main()
