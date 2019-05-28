@@ -1,0 +1,6 @@
+>>> test = __import__('1-rectangle')
+>>> test.width = 10
+>>> test.height = 3
+
+>>> test.width = -1
+>>> test.height = -1 
