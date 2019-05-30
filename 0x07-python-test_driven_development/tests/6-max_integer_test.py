@@ -47,5 +47,47 @@ class TestMaxInteger(unittest.TestCase):
         list = [1, 2, 3, 4]
         self.assertFalse(max_integer(list) == 2)
 
+    def max_begin(self):
+        """
+        max at the beginning
+        """
+        result = max_integer([4, 1, 2])
+        self.assertEqual(result, 4)
+
+    def max_middle(self):
+        """
+        max in middle
+        """
+        result = max_integer([1, 4, 2])
+        self.assertEqual(result, 4)
+
+    def negative_number(self):
+        """
+        negative in the list
+        """
+        result = max_integer([3, -1, 2])
+        self.assertEqual(result, 3)
+
+    def all_negative(self):
+        """
+        all negative
+        """
+        result = max_integer([-2, -3, -1])
+        self.assertEqual(result, None)
+
+    def only_one(self):
+        """
+        only one element
+        """
+        result = max_integer([2])
+        self.assertEqual(result, 2)
+
+    def list_empty(self):
+        """
+        list empty
+        """
+        result = max_integer([])
+        self.assertEqual(result, None)
+
 if __name__ == '__main__':
     unittest.main()
