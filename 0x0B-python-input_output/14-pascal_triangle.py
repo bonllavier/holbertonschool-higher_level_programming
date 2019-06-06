@@ -8,7 +8,7 @@ def pascal_triangle(n):
     counter = 1
     if n > 0:
         if n == 1:
-            return [1]
+            return [[1]]
         else:
             for iter in range(n):
                 inter_list = []
@@ -22,4 +22,6 @@ def pascal_triangle(n):
                                 int(new_list[iter - 1][iter2]))
                 counter += 1
                 new_list.append(inter_list)
+    if n <= 0:
+        return []
     return new_list
