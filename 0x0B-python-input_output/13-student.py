@@ -29,6 +29,5 @@ class Student:
         """
         reload from json
         """
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        for (key, value) in json.items():
+            self.__dict__[key] = value
