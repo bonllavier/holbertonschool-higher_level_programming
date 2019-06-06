@@ -21,5 +21,6 @@ class Rectangle(BaseGeometry):
     reactangle
     """
     def __init__(self, width, height):
+        super().__init__()
         self.__width = self.integer_validator("width", width)
         self.__height = self.integer_validator("height", height)
