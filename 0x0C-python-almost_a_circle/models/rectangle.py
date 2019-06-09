@@ -29,7 +29,13 @@ class Rectangle(Base):
         """
         set width
         """
-        self.__width = value
+        if (type(value) == int):
+            if value > 0:
+                self.__width = value
+            else:
+                raise ValueError("width must be > 0")
+        else:
+            raise TypeError("width must be an integer")
 
     @property
     def height(self):
@@ -43,7 +49,13 @@ class Rectangle(Base):
         """
         set height
         """
-        self.__height = value
+        if (type(value) == int):
+            if value > 0:
+                self.__height = value
+            else:
+                raise ValueError("height must be > 0")
+        else:
+            raise TypeError("height must be an integer")
 
     @property
     def x(self):
@@ -52,12 +64,18 @@ class Rectangle(Base):
         """
         return self.__x
 
-    @height.setter
+    @x.setter
     def x(self, value):
         """
         set x
         """
-        self.__x = value
+        if (type(value) == int):
+            if value >= 0:
+                self.__x = value
+            else:
+                raise ValueError("x must be >= 0")
+        else:
+            raise TypeError("x must be an integer")
 
     @property
     def y(self):
@@ -66,9 +84,41 @@ class Rectangle(Base):
         """
         return self.__y
 
-    @height.setter
+    @y.setter
     def y(self, value):
         """
         set y
         """
-        self.__y = value
+        if (type(value) == int):
+            if value >= 0:
+                self.__y = value
+            else:
+                raise ValueError("y must be >= 0")
+        else:
+            raise TypeError("y must be an integer")
+
+    def area(self):
+        """
+        get area
+        """
+        return self.__width * self.__height
+
+    def display(self):
+        strtmp = ""
+        if self.__width == 0 or self.__height == 0:
+            return strtmp
+        else:
+            for iter1 in range(self.__height):
+                for iter2 in range(self.__width):
+                    strtmp += "#"
+                if iter1 != (self.__height - 1):
+                    strtmp += "\n"
+        print(strtmp)
+
+    def __str__(self):
+        """
+        str
+        """
+        return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                 self.id, self.__x, self.__y,
+                                                 self.__width, self.__height))
