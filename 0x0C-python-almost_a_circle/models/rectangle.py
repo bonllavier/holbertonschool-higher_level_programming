@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from models.base import Base
-
+from collections import OrderedDict
 
 class Rectangle(Base):
     """
@@ -128,3 +128,10 @@ class Rectangle(Base):
         return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                                                  self.id, self.__x, self.__y,
                                                  self.__width, self.__height))
+
+    def update(self, *args):
+        tmp_dict = self.__dict__.keys()
+        d_sorted_by_value = sorted(tmp_dict, key=lambda x: x[1])
+        print("{}".format(d_sorted_by_value))
+        #for v in args:
+        #    setattr(self,int(v), 0)
