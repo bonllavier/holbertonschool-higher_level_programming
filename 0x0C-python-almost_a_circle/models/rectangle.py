@@ -104,11 +104,17 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """
+        display
+        """
         strtmp = ""
         if self.__width == 0 or self.__height == 0:
             return strtmp
         else:
+            strtmp += "\n" * self.__y
             for iter1 in range(self.__height):
+                for iter3 in range(0, self.__x):
+                    strtmp += " "
                 for iter2 in range(self.__width):
                     strtmp += "#"
                 if iter1 != (self.__height - 1):
