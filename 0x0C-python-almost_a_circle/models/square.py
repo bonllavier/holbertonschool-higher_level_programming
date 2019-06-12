@@ -39,6 +39,9 @@ class Square(Rectangle):
                                               self.width))
 
     def update(self, *args, **kwargs):
+        """
+        update method
+        """
         if args:
             tmp_list = ["id", "size", "x", "y"]
             for v in range(len(args)):
