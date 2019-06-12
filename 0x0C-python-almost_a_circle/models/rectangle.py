@@ -133,6 +133,9 @@ class Rectangle(Base):
                                                  self.__width, self.__height))
 
     def update(self, *args, **kwargs):
+        """
+        update method
+        """
         if args:
             tmp_list = ["id", "width", "height", "x", "y"]
             for v in range(len(args)):
@@ -143,6 +146,9 @@ class Rectangle(Base):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """
+        to dict
+        """
         return dict(
             (key, value)
             for (key, value) in self.__dict__.items())
