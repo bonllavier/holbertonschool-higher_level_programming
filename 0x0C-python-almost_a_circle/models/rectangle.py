@@ -149,6 +149,5 @@ class Rectangle(Base):
         """
         to dict
         """
-        return dict(
-            (key, value)
-            for (key, value) in self.__dict__.items())
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+                'height': self.__height, 'width': self.__width}
