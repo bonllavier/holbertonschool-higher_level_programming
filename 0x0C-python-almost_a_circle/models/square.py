@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+module square
+"""
 from models.rectangle import Rectangle
 
 
