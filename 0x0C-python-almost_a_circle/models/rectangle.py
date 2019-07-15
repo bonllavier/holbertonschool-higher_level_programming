@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+module rectangle
+"""
 from models.base import Base
 
 
@@ -129,7 +132,22 @@ class Rectangle(Base):
                                                  self.id, self.__x, self.__y,
                                                  self.__width, self.__height))
 
-    def update(self, *args):
-        tmp_list = ["id", "width", "height", "x", "y"]
-        for v in range(len(args)):
-            setattr(self, tmp_list[v], args[v])
+    def update(self, *args, **kwargs):
+        """
+        update method
+        """
+        if args:
+            tmp_list = ["id", "width", "height", "x", "y"]
+            for v in range(len(args)):
+                setattr(self, tmp_list[v], args[v])
+        else:
+            if kwargs:
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        to dict
+        """
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+                'height': self.__height, 'width': self.__width}
