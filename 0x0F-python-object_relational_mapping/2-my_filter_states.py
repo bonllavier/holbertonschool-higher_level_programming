@@ -13,7 +13,7 @@ if __name__ == "__main__":
         db=sys.argv[3],
         port=3306)
     cur = db.cursor()
-    consulta = (("SELECT * FROM states WHERE name = '{}'") +
+    consulta = (("SELECT * FROM states WHERE BINARY name = '{}'") +
                 (" ORDER BY id ASC"))
     numrows = cur.execute(consulta.format(sys.argv[4]))
 
