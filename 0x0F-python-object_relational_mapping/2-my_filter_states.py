@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module 2
+module 2 fixed
 """
 import MySQLdb
 import sys
