@@ -14,7 +14,7 @@ if __name__ == "__main__":
         port=3306)
     cur = db.cursor()
     consulta = (("SELECT * FROM states WHERE name = '{}'") +
-                (" GROUP BY states.name ORDER BY states.id ASC"))
+                (" ORDER BY id ASC"))
     numrows = cur.execute(consulta.format(sys.argv[4]))
 
     for row in cur.fetchall():
