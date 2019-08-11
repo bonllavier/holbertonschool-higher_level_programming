@@ -17,8 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State)\
-                    .order_by(State.id)\
-                    .filter(State.name.contains(sys.argv[4])).first()
+                    .filter(State.name.like(sys.argv[4])).first()
     if states is not None:
         print(states.id)
     else:
