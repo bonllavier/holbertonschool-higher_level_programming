@@ -14,7 +14,7 @@ if __name__ == "__main__":
         port=3306)
     cur = db.cursor()
     numrows = cur.execute(
-        "SELECT * FROM states GROUP BY states.name ORDER BY states.id ASC")
+        "SELECT * FROM states ORDER BY id ASC")
     for row in cur.fetchall():
         print(row)
     db.close()
