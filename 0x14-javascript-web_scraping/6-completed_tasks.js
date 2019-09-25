@@ -13,7 +13,7 @@ request(array[0], function (err, res, body) {
     for (x = 0; x < result.length; x++) {
       dict[result[x].userId.toString()] = 0;
     }
-    for (let key in dict) {
+    for (const key in dict) {
       cont = 0;
       for (x = 0; x < result.length; x++) {
         k2 = result[x].userId.toString();
