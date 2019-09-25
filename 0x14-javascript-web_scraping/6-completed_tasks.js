@@ -7,9 +7,10 @@ let cont = 0;
 let result = [];
 let k2 = '';
 request(array[0], function (err, res, body) {
+  result = JSON.parse(body);
   if (err) {
+    console.log(err);
   } else {
-    result = JSON.parse(body);
     for (x = 0; x < result.length; x++) {
       dict[result[x].userId.toString()] = 0;
     }
