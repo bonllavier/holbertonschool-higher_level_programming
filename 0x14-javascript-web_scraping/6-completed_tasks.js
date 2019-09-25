@@ -5,6 +5,7 @@ let x = 0;
 const dict = {};
 let cont = 0;
 let result = [];
+let k2 = '';
 request(array[0], function (err, res, body) {
   if (err) {
   } else {
@@ -16,8 +17,8 @@ request(array[0], function (err, res, body) {
       for (var key in dict) {
         cont = 0;
         for (x = 0; x < result.length; x++) {
-          if (key === result[x].userId.toString() &&
-result[x].completed === true) {
+          k2 = result[x].userId.toString();
+          if (key === k2 && result[x].completed === true) {
             cont = cont + 1;
             dict[result[x].userId.toString()] = cont;
           }
